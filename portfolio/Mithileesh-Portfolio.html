@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mithileeshwaran KR | Cyber Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Libre Baskerville';
+      background: black;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    #terminal-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at center, #020617, #000);
+      font-family: monospace;
+      color: #22c55e;
+      opacity: 0.25;
+      padding: 20px;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #38bdf8;
+      text-shadow: 0 0 20px #38bdf8;
+    }
+
+    .typing {
+      margin-top: 10px;
+      color: #94a3b8;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      font-size: 20px;
+    }
+
+    nav a {
+      margin: 0 20px;
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
+
+    .card {
+      background: rgba(2, 6, 23, 0.8);
+      border: 1px solid #1e293b;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 12px;
+    }
+
+    .Skill {
+      font-size: 20px;
+    }
+
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="terminal-bg"></div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>MITHILEESHWARAN KR</h1>
+    <div class="typing" id="typing"></div>
+    <p style="font-size: 20px;">Cybersecurity Student | Developer</p>
+    <a href="#projects" class="btn">View Work</a>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p style="font-size: 25px;">
+      I am a cybersecurity student based in Chennai, passionate about ethical hacking,
+      penetration testing, and building secure web applications. My goal is to become
+      a professional cybersecurity expert and contribute to securing digital systems.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="card">
+      <h3>🔐 Crime Report.</h3>
+      <p style="font-size: 17px;">(Developed a web-based application that simplifies crime reporting by enabling users
+        to quicklysubmit incidents directly to the police department)
+      </p>
+      <p style="font-size: 17px;"><b>Tech:</b> HTML,CSS,JavaScript</p>
+    </div>
+
+    <div class="card">
+      <h3>🔐 pending......</h3>
+      <p style="font-size: 17px;">pending.....</p>
+      <p style="font-size: 17px;"><b>Tech:</b> ----</p>
+      <p style="font-size: 17px;"><b>GitHub:</b> Add your link</p>
+    </div>
+
+    <div class="card">
+      <h3>🔐 pending......</h3>
+      <p style="font-size: 17px;">pending.....</p>
+      <p style="font-size: 17px;"><b>Tech:</b> ----</p>
+      <p style="font-size: 17px;"><b>GitHub:</b> Add your link</p>
+    </div>
+
+    <div class="card">
+      <h3>🔐 pending......</h3>
+      <p style="font-size: 17px;">pending.....</p>
+      <p style="font-size: 17px;"><b>Tech:</b> ----</p>
+      <p style="font-size: 17px;"><b>GitHub:</b> Add your link</p>
+    </div>
+
+  </section>
+  <div class="Skill">
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="card">
+        <p>💻 Programming: Python</p>
+        <p>🔐 Cybersecurity:</p>
+        <p>🛠 Tools</p>
+        <p>🌐 Web: HTML, CSS</p>
+      </div>
+    </section>
+  </div>
+
+  <section id="resume">
+    <h2 class="section-title">Resume</h2>
+    <a href="Mithileeshwaran Resume.pdf" class="btn" target="_blank">View Resume</a>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p style="font-size: 20px;">Email: mithileesh1909@gmail.com</p>
+    <p style="font-size: 20px;">Phone: 9629223618</p>
+    <p style="font-size: 20px;">GitHub: <a style="text-decoration: none; color: green;"
+        href="https://github.com/mithil-kp">GitHub</a></p>
+    <p style="font-size: 20px;">LinkedIn: <a style="text-decoration: none; color: green;"
+        href="www.linkedin.com/in/mithileeshwaran-kr-0ab444362">LinkedIn</a></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Mithileeshwaran KR</p>
+  </footer>
+
+  <script>
+    const text = ["Cybersecurity Student", "Web Developer"];
+    let i = 0, j = 0, current = "", isDeleting = false;
+    function type() {
+      const el = document.getElementById("typing");
+      if (!isDeleting && j <= text[i].length) current = text[i].substring(0, j++);
+      else if (isDeleting && j >= 0) current = text[i].substring(0, j--);
+      el.textContent = current;
+      if (j === text[i].length) isDeleting = true;
+      if (j === 0 && isDeleting) { isDeleting = false; i = (i + 1) % text.length; }
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+    type();
+
+    const term = document.getElementById('terminal-bg');
+    const commands = ['nmap scan...', 'sqlmap running...', 'access granted', 'decrypting...', 'connecting...', 'system secured'];
+
+    function loopTerminal() {
+      const line = document.createElement('div');
+      line.textContent = '> ' + commands[Math.floor(Math.random() * commands.length)];
+      term.appendChild(line);
+      if (term.children.length > 40) term.removeChild(term.firstChild);
+      setTimeout(loopTerminal, 200);
+    }
+
+    loopTerminal();
+  </script>
+
+</body>
+
+</html>
