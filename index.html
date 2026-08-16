@@ -4,118 +4,688 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mithileeshwaran KR | Cyber Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <title>Mithileeshwaran KR | Cybersecurity Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Orbitron:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
+    /* =========================
+       RESET
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Libre Baskerville';
-      background: black;
-      color: #e2e8f0;
+    html {
+      scroll-behavior: smooth;
       overflow-x: hidden;
     }
+
+    body {
+      font-family: "Libre Baskerville", serif;
+      background: #000;
+      color: #e2e8f0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* =========================
+       TERMINAL BACKGROUND
+    ========================= */
 
     #terminal-bg {
       position: fixed;
       inset: 0;
       z-index: -1;
-      background: radial-gradient(circle at center, #020617, #000);
+
+      background:
+        radial-gradient(
+          circle at center,
+          #020617 0%,
+          #000 80%
+        );
+
       font-family: monospace;
       color: #22c55e;
-      opacity: 0.25;
+      opacity: 0.22;
+
       padding: 20px;
+
+      overflow: hidden;
+
+      pointer-events: none;
     }
 
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #38bdf8;
-      text-shadow: 0 0 20px #38bdf8;
-    }
-
-    .typing {
-      margin-top: 10px;
-      color: #94a3b8;
-    }
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       position: fixed;
       top: 0;
+      left: 0;
+
       width: 100%;
+
       display: flex;
       justify-content: center;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(10px);
-      font-size: 20px;
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      padding: 15px 10px;
+
+      background: rgba(0, 0, 0, 0.75);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+
+      z-index: 1000;
     }
 
     nav a {
-      margin: 0 20px;
+      margin: 5px 15px;
+
       color: #38bdf8;
+
       text-decoration: none;
+
+      font-size: 16px;
+
+      transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease,
+        transform 0.3s ease;
     }
 
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+    nav a:hover {
+      color: #fff;
+
+      text-shadow:
+        0 0 10px #38bdf8,
+        0 0 20px #38bdf8;
+
+      transform: translateY(-2px);
     }
 
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    /* =========================
+       HERO
+    ========================= */
+
+    header {
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      padding: 100px 20px 60px;
+    }
+
+    h1 {
+      font-family: "Orbitron", sans-serif;
+
+      font-size: clamp(2rem, 6vw, 4rem);
+
       color: #38bdf8;
+
+      text-shadow:
+        0 0 10px #38bdf8,
+        0 0 20px #38bdf8,
+        0 0 40px rgba(56, 189, 248, 0.5);
+
+      letter-spacing: 2px;
+
+      line-height: 1.2;
     }
 
-    .card {
-      background: rgba(2, 6, 23, 0.8);
-      border: 1px solid #1e293b;
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 12px;
+    .typing {
+      margin-top: 15px;
+
+      min-height: 30px;
+
+      color: #94a3b8;
+
+      font-family: monospace;
+
+      font-size: 18px;
     }
 
-    .Skill {
+    .hero-description {
+      margin-top: 12px;
+
       font-size: 20px;
+
+      color: #e2e8f0;
     }
 
+    /* =========================
+       BUTTON
+    ========================= */
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+
+      margin-top: 25px;
+
+      padding: 12px 24px;
+
       border: 1px solid #38bdf8;
+
       color: #38bdf8;
+
       text-decoration: none;
+
       border-radius: 8px;
+
+      font-family: "Orbitron", sans-serif;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
     }
+
+    .btn:hover {
+      background: #38bdf8;
+
+      color: #000;
+
+      box-shadow:
+        0 0 10px #38bdf8,
+        0 0 25px rgba(56, 189, 248, 0.6);
+
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      width: 100%;
+      max-width: 1000px;
+
+      margin: auto;
+
+      padding: 90px 20px;
+    }
+
+    .section-title {
+      margin-bottom: 25px;
+
+      font-family: "Orbitron", sans-serif;
+
+      font-size: 2rem;
+
+      color: #38bdf8;
+
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    #about p {
+      font-size: 20px;
+
+      line-height: 1.9;
+
+      color: #cbd5e1;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .card {
+      background: rgba(2, 6, 23, 0.85);
+
+      border: 1px solid #1e293b;
+
+      padding: 22px;
+
+      margin: 18px 0;
+
+      border-radius: 12px;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+      overflow-wrap: break-word;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+
+      border-color: #38bdf8;
+
+      box-shadow:
+        0 0 15px rgba(56, 189, 248, 0.15),
+        0 0 30px rgba(56, 189, 248, 0.08);
+    }
+
+    .card h3 {
+      color: #f8fafc;
+
+      margin-bottom: 10px;
+
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 8px 0;
+
+      color: #cbd5e1;
+
+      font-size: 16px;
+
+      line-height: 1.7;
+    }
+
+    /* =========================
+       PROJECT GITHUB LINKS
+    ========================= */
+
+    .github-link {
+      color: #22c55e;
+
+      text-decoration: none;
+
+      transition: 0.3s ease;
+    }
+
+    .github-link:hover {
+      color: #4ade80;
+
+      text-shadow: 0 0 10px #22c55e;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-container {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: rgba(2, 6, 23, 0.85);
+
+      border: 1px solid #1e293b;
+
+      padding: 20px;
+
+      border-radius: 12px;
+
+      transition: 0.3s ease;
+    }
+
+    .skill-card:hover {
+      border-color: #38bdf8;
+
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 0 20px rgba(56, 189, 248, 0.1);
+    }
+
+    .skill-card h3 {
+      color: #38bdf8;
+
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: #cbd5e1;
+
+      font-size: 16px;
+    }
+
+    /* =========================
+       RESUME
+    ========================= */
+
+    #resume {
+      text-align: center;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-card {
+      background: rgba(2, 6, 23, 0.85);
+
+      border: 1px solid #1e293b;
+
+      border-radius: 12px;
+
+      padding: 25px;
+    }
+
+    .contact-card p {
+      margin: 12px 0;
+
+      font-size: 18px;
+
+      color: #cbd5e1;
+
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card a {
+      color: #22c55e;
+
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      color: #4ade80;
+
+      text-shadow: 0 0 10px #22c55e;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       text-align: center;
-      padding: 20px;
+
+      padding: 30px 20px;
+
+      border-top: 1px solid #1e293b;
+
+      color: #64748b;
+
+      font-size: 14px;
     }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      nav {
+        padding: 10px 6px;
+      }
+
+      nav a {
+        margin: 4px 7px;
+
+        padding: 5px;
+
+        font-size: 13px;
+      }
+
+      header {
+        padding: 120px 20px 60px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+      }
+
+      .typing {
+        font-size: 16px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 65px 18px;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      #about p {
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+      }
+
+      .card p {
+        font-size: 15px;
+      }
+
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card p {
+        font-size: 16px;
+      }
+
+      #terminal-bg {
+        padding: 10px;
+
+        font-size: 11px;
+
+        opacity: 0.16;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 480px) {
+
+      nav {
+        padding: 8px 3px;
+      }
+
+      nav a {
+        margin: 2px;
+
+        padding: 5px 4px;
+
+        font-size: 11px;
+      }
+
+      header {
+        min-height: 100vh;
+
+        padding:
+          120px
+          15px
+          50px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+
+        letter-spacing: 1px;
+      }
+
+      .typing {
+        font-size: 14px;
+
+        min-height: 25px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+
+        line-height: 1.6;
+      }
+
+      .btn {
+        padding: 10px 18px;
+
+        font-size: 13px;
+      }
+
+      section {
+        padding: 55px 14px;
+      }
+
+      .section-title {
+        font-size: 1.45rem;
+
+        margin-bottom: 18px;
+      }
+
+      #about p {
+        font-size: 15px;
+
+        line-height: 1.8;
+      }
+
+      .card {
+        padding: 15px;
+
+        margin: 14px 0;
+
+        border-radius: 10px;
+      }
+
+      .card h3 {
+        font-size: 16px;
+      }
+
+      .card p {
+        font-size: 14px;
+
+        line-height: 1.7;
+      }
+
+      .skill-card {
+        padding: 15px;
+      }
+
+      .skill-card h3 {
+        font-size: 16px;
+      }
+
+      .skill-card p {
+        font-size: 14px;
+      }
+
+      .contact-card {
+        padding: 18px;
+      }
+
+      .contact-card p {
+        font-size: 14px;
+
+        line-height: 1.8;
+      }
+
+      footer {
+        padding: 25px 15px;
+
+        font-size: 12px;
+      }
+
+      #terminal-bg {
+        font-size: 9px;
+
+        opacity: 0.12;
+      }
+    }
+
+    /* =========================
+       VERY SMALL PHONES
+    ========================= */
+
+    @media (max-width: 360px) {
+
+      nav a {
+        font-size: 10px;
+
+        padding: 4px 3px;
+      }
+
+      header {
+        padding-left: 12px;
+
+        padding-right: 12px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      section {
+        padding-left: 12px;
+
+        padding-right: 12px;
+      }
+
+      .card {
+        padding: 13px;
+      }
+
+      .card h3 {
+        font-size: 15px;
+      }
+
+      .card p {
+        font-size: 13px;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
+  <!-- =========================
+       TERMINAL BACKGROUND
+  ========================= -->
+
   <div id="terminal-bg"></div>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
   <nav>
     <a href="#about">About</a>
@@ -125,113 +695,530 @@
     <a href="#contact">Contact</a>
   </nav>
 
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
   <header>
+
     <h1>MITHILEESHWARAN KR</h1>
-    <div class="typing" id="typing"></div>
-    <p style="font-size: 20px;">Cybersecurity Student | Developer</p>
-    <a href="#projects" class="btn">View Work</a>
+
+    <div
+      class="typing"
+      id="typing">
+    </div>
+
+    <p class="hero-description">
+      Cybersecurity Student | Web Developer
+    </p>
+
+    <a
+      href="#projects"
+      class="btn">
+      View My Work
+    </a>
+
   </header>
 
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
   <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p style="font-size: 25px;">
-      I am a cybersecurity student based in Chennai, passionate about ethical hacking,
-      penetration testing, and building secure web applications. My goal is to become
-      a professional cybersecurity expert and contribute to securing digital systems.
+
+    <h2 class="section-title">
+      About Me
+    </h2>
+
+    <p>
+      I am a cybersecurity student based in Chennai,
+      passionate about ethical hacking, penetration testing,
+      and building secure web applications.
+      My goal is to become a professional cybersecurity
+      expert and contribute to securing digital systems.
     </p>
+
   </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================= -->
 
   <section id="projects">
-    <h2 class="section-title">Projects</h2>
+
+    <h2 class="section-title">
+      Projects
+    </h2>
+
+
+    <!-- Project 1 -->
 
     <div class="card">
-      <h3>🔐 Crime Report.</h3>
-      <p style="font-size: 17px;">(Developed a web-based application that simplifies crime reporting by enabling users
-        to quicklysubmit incidents directly to the police department)
+
+      <h3>
+        🔐 Crime Report
+      </h3>
+
+      <p>
+        Developed a web-based application that simplifies
+        crime reporting by enabling users to quickly submit
+        incidents directly to the police department.
       </p>
-      <p style="font-size: 17px;"><b>Tech:</b> HTML,CSS,JavaScript</p>
+
+      <p>
+        <b>Tech:</b>
+        HTML, CSS, JavaScript
+      </p>
+
     </div>
 
-    <div class="card">
-      <h3>🔐 E-Commerce </h3>
-      <p style="font-size: 17px;">🛒 E-Commerce Website with QR-Based Issue Reporting This project is a modern e-commerce platform designed to enhance user experience and streamline issue reporting through an innovative QR-based system. 🚀 Features 🛍️ Full E-Commerce Functionality Browse products, view details, and manage purchases with a user-friendly interface. 📱 QR Code-Base</p>
-      <p style="font-size: 17px;"><b>Tech:</b> PHP,SQL</p>
-      <p style="font-size: 17px;"><b>GitHub:</b><a style="text-decoration: none; color: green;"
-        href="https://github.com/mithil-kp/E-commerce">GitHub</a></p>
-    </div>
+
+    <!-- Project 2 -->
 
     <div class="card">
-      <h3>🔐 pending......</h3>
-      <p style="font-size: 17px;">pending.....</p>
-      <p style="font-size: 17px;"><b>Tech:</b> ----</p>
-      <p style="font-size: 17px;"><b>GitHub:</b> Add your link</p>
+
+      <h3>
+        🛒 E-Commerce Website
+      </h3>
+
+      <p>
+        A modern e-commerce platform designed to improve
+        the shopping experience and streamline issue
+        reporting through an innovative QR-based system.
+      </p>
+
+      <p>
+        <b>Features:</b>
+        Product browsing, product details,
+        purchasing and QR-based issue reporting.
+      </p>
+
+      <p>
+        <b>Tech:</b>
+        PHP, SQL
+      </p>
+
+      <p>
+        <b>GitHub:</b>
+
+        <a
+          class="github-link"
+          href="https://github.com/mithil-kp/E-commerce"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          View Project
+
+        </a>
+
+      </p>
+
     </div>
 
+
+    <!-- Project 3 -->
+
     <div class="card">
-      <h3>🔐 pending......</h3>
-      <p style="font-size: 17px;">pending.....</p>
-      <p style="font-size: 17px;"><b>Tech:</b> ----</p>
-      <p style="font-size: 17px;"><b>GitHub:</b> Add your link</p>
+
+      <h3>
+        🛡️ Cybersecurity Project
+      </h3>
+
+      <p>
+        Coming soon...
+      </p>
+
+      <p>
+        <b>Tech:</b>
+        To be updated
+      </p>
+
+    </div>
+
+
+    <!-- Project 4 -->
+
+    <div class="card">
+
+      <h3>
+        💻 Web Security Project
+      </h3>
+
+      <p>
+        Coming soon...
+      </p>
+
+      <p>
+        <b>Tech:</b>
+        To be updated
+      </p>
+
     </div>
 
   </section>
-  <div class="Skill">
-    <section id="skills">
-      <h2 class="section-title">Skills</h2>
-      <div class="card">
-        <p>💻 Programming: Python</p>
-        <p>🔐 Cybersecurity:</p>
-        <p>🛠 Tools</p>
-        <p>🌐 Web: HTML, CSS</p>
+
+
+  <!-- =========================
+       SKILLS
+  ========================= -->
+
+  <section id="skills">
+
+    <h2 class="section-title">
+      Skills
+    </h2>
+
+
+    <div class="skills-container">
+
+
+      <div class="skill-card">
+
+        <h3>
+          💻 Programming
+        </h3>
+
+        <p>
+          Python
+        </p>
+
       </div>
-    </section>
-  </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          🔐 Cybersecurity
+        </h3>
+
+        <p>
+          Ethical Hacking,
+          Penetration Testing,
+          Web Security
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          🛠 Tools
+        </h3>
+
+        <p>
+          Security Tools,
+          Linux,
+          Networking Tools
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          🌐 Web Development
+        </h3>
+
+        <p>
+          HTML,
+          CSS,
+          JavaScript,
+          PHP,
+          SQL
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RESUME
+  ========================= -->
 
   <section id="resume">
-    <h2 class="section-title">Resume</h2>
-    <a href="Resume.pdf" class="btn" target="_blank">View Resume</a>
+
+    <h2 class="section-title">
+      Resume
+    </h2>
+
+    <p>
+      View or download my latest resume.
+    </p>
+
+    <a
+      href="Resume.pdf"
+      class="btn"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      📄 View Resume
+
+    </a>
+
   </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
   <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p style="font-size: 20px;">Email: mithileesh1909@gmail.com</p>
-    <p style="font-size: 20px;">Phone: 9629223618</p>
-    <p style="font-size: 20px;">GitHub: <a style="text-decoration: none; color: green;"
-        href="https://github.com/mithil-kp">GitHub</a></p>
-    <p style="font-size: 20px;">LinkedIn: <a style="text-decoration: none; color: green;"
-        href="https://www.linkedin.com/in/mithileeshwaran-kr-0ab444362/">LinkedIn</a></p>
+
+    <h2 class="section-title">
+      Contact
+    </h2>
+
+
+    <div class="contact-card">
+
+      <p>
+        📧
+        <b>Email:</b>
+
+        <a href="mailto:mithileesh1909@gmail.com">
+          mithileesh1909@gmail.com
+        </a>
+      </p>
+
+
+      <p>
+        📱
+        <b>Phone:</b>
+
+        <a href="tel:+919629223618">
+          +91 9629223618
+        </a>
+      </p>
+
+
+      <p>
+        🐙
+        <b>GitHub:</b>
+
+        <a
+          href="https://github.com/mithil-kp"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          github.com/mithil-kp
+
+        </a>
+      </p>
+
+
+      <p>
+        💼
+        <b>LinkedIn:</b>
+
+        <a
+          href="https://www.linkedin.com/in/mithileeshwaran-kr-0ab444362/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          LinkedIn Profile
+
+        </a>
+      </p>
+
+    </div>
+
   </section>
 
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
-    <p>© 2026 Mithileeshwaran KR</p>
+
+    <p>
+      © 2026 Mithileeshwaran KR
+    </p>
+
+    <p>
+      Cybersecurity Student | Web Developer
+    </p>
+
   </footer>
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
-    const text = ["Cybersecurity Student", "Web Developer"];
-    let i = 0, j = 0, current = "", isDeleting = false;
+
+    /* =========================
+       TYPING EFFECT
+    ========================= */
+
+    const text = [
+      "Cybersecurity Student",
+      "Web Developer",
+      "Ethical Hacking Enthusiast"
+    ];
+
+    let i = 0;
+    let j = 0;
+
+    let current = "";
+
+    let isDeleting = false;
+
+
     function type() {
-      const el = document.getElementById("typing");
-      if (!isDeleting && j <= text[i].length) current = text[i].substring(0, j++);
-      else if (isDeleting && j >= 0) current = text[i].substring(0, j--);
-      el.textContent = current;
-      if (j === text[i].length) isDeleting = true;
-      if (j === 0 && isDeleting) { isDeleting = false; i = (i + 1) % text.length; }
-      setTimeout(type, isDeleting ? 50 : 100);
+
+      const element =
+        document.getElementById("typing");
+
+
+      if (!isDeleting) {
+
+        current =
+          text[i].substring(0, j);
+
+        j++;
+
+      } else {
+
+        current =
+          text[i].substring(0, j);
+
+        j--;
+
+      }
+
+
+      element.textContent = current;
+
+
+      if (
+        !isDeleting &&
+        j === text[i].length + 1
+      ) {
+
+        isDeleting = true;
+
+        setTimeout(type, 1200);
+
+        return;
+      }
+
+
+      if (
+        isDeleting &&
+        j === 0
+      ) {
+
+        isDeleting = false;
+
+        i =
+          (i + 1) % text.length;
+
+      }
+
+
+      setTimeout(
+        type,
+        isDeleting ? 50 : 100
+      );
+
     }
+
+
     type();
 
-    const term = document.getElementById('terminal-bg');
-    const commands = ['nmap scan...', 'sqlmap running...', 'access granted', 'decrypting...', 'connecting...', 'system secured'];
+
+    /* =========================
+       TERMINAL BACKGROUND
+    ========================= */
+
+    const terminal =
+      document.getElementById(
+        "terminal-bg"
+      );
+
+
+    const commands = [
+
+      "nmap scan...",
+
+      "sqlmap running...",
+
+      "checking ports...",
+
+      "analyzing network...",
+
+      "access granted",
+
+      "decrypting...",
+
+      "connecting...",
+
+      "system secured",
+
+      "firewall active",
+
+      "scanning vulnerabilities...",
+
+      "authentication verified",
+
+      "security check complete"
+
+    ];
+
 
     function loopTerminal() {
-      const line = document.createElement('div');
-      line.textContent = '> ' + commands[Math.floor(Math.random() * commands.length)];
-      term.appendChild(line);
-      if (term.children.length > 40) term.removeChild(term.firstChild);
-      setTimeout(loopTerminal, 200);
+
+      const line =
+        document.createElement("div");
+
+
+      const randomCommand =
+        commands[
+          Math.floor(
+            Math.random() *
+            commands.length
+          )
+        ];
+
+
+      line.textContent =
+        "> " + randomCommand;
+
+
+      terminal.appendChild(line);
+
+
+      if (
+        terminal.children.length > 45
+      ) {
+
+        terminal.removeChild(
+          terminal.firstChild
+        );
+
+      }
+
+
+      setTimeout(
+        loopTerminal,
+        250
+      );
+
     }
 
+
     loopTerminal();
+
   </script>
 
 </body>
